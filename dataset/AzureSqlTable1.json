@@ -6,15 +6,25 @@
 			"type": "LinkedServiceReference"
 		},
 		"parameters": {
-			"schemaName": {
+			"SchemaName": {
 				"type": "string"
 			},
-			"tableName": {
+			"TableName": {
 				"type": "string"
 			}
 		},
 		"annotations": [],
 		"type": "AzureSqlTable",
-		"schema": []
+		"schema": [],
+		"typeProperties": {
+			"schema": {
+				"value": "@dataset().SchemaName",
+				"type": "Expression"
+			},
+			"table": {
+				"value": "@dataset().TableName",
+				"type": "Expression"
+			}
+		}
 	}
 }
